@@ -42,12 +42,16 @@ function draw(){
 
 async function getBackgroundImg(){
 
-    async function getBackgroundImg(){
+    // write code to fetch time from API
+    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
 
-        fetch(API)
-    }
-
+    //change the data in JSON format
+    var responseJSON = await response.json();
+    var datetime = responseJSON.datetime;
     
+    // write code slice the datetime
+    hour = datetime.slice(11,13);
+
     if(hour>=0 && hour<18 ){
         bg = "sunrise.png";
     }
